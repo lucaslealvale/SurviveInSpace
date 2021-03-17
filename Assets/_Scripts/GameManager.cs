@@ -38,7 +38,8 @@ public class GameManager
 
     public void ChangeState(GameState nextState)
     {
-       if (nextState == GameState.GAME) Reset();
+
+       if (nextState == GameState.MENU) Reset();
         
         if(gameState == GameState.PAUSE && nextState == GameState.MENU){
             GameObject.FindWithTag("Player").transform.position = position;
