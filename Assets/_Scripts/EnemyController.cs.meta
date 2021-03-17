@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 462343d7dc28c934e848f8bf6bdf64b4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - td: {instanceID: 0}
+  - tiro: {instanceID: 0}
+  - shootSFX: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
