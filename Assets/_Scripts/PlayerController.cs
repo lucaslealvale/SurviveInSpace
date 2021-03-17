@@ -11,9 +11,11 @@ public class PlayerController : SteerableBehaviour, IDamageable, IShooter
     public float cantoInferior;
 
     public GameObject bullet;
+    public GameObject bullet2;
+
     public Transform arma; 
     Animator animator;
-    public float shootDelay = 1.0f;
+    public float shootDelay = 0.1f;
     public AudioClip shootSFX;
     private float _lastShootTimestamp = 0.0f;
     GameManager gm;
@@ -46,10 +48,15 @@ public class PlayerController : SteerableBehaviour, IDamageable, IShooter
 
     public void Shoot()
     {
+        
         if (Time.time - _lastShootTimestamp < shootDelay) return;
         audioManeger.PlaySFX(shootSFX);
         _lastShootTimestamp = Time.time;
+        if(gm.nivelArma==0){
         Instantiate(bullet, arma.position, Quaternion.identity);
+        }else{
+            Instantiate(bullet2, arma.position, Quaternion.identity);
+        }
     }
 
    void FixedUpdate()
@@ -62,11 +69,9 @@ public class PlayerController : SteerableBehaviour, IDamageable, IShooter
        
 
        if(transform.position.x < cantoEsquerdo && xInput < 0 || transform.position.x > cantoDireito && xInput > 0 ){
-           Debug.Log($" borda esquerta violada: {xInput}");
            xInput = 0;
        }
        if(transform.position.y < cantoInferior && yInput < 0 || transform.position.y > cantoSuperior && yInput > 0 ){
-           Debug.Log($" borda esquerta violada: {xInput}");
            yInput = 0;
        }
        
@@ -104,7 +109,18 @@ public class PlayerController : SteerableBehaviour, IDamageable, IShooter
         Destroy(collision.gameObject);
         TakeDamage();
     }
-    
+    if (collision.CompareTag("pedra"))
+    {
+        Destroy(collision.gameObject);
+        
+        TakeDamage();
+    }
+    if (collision.CompareTag("superArma"))
+    {
+        gm.nivelArma=1;
+        Destroy(collision.gameObject);
+
+    }
     }
   
     

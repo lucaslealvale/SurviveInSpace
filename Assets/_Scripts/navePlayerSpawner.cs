@@ -13,14 +13,11 @@ public class navePlayerSpawner : MonoBehaviour
       // GameManager.changeStateDelegate += Construir;
     
       Construir();
-      Debug.Log($"{navePlayer}");
   }
 
   void Construir()
   {
-      Debug.Log($"criando: {gm.gameState}");
-      
-
+    
       GameObject tile = Instantiate(navePlayer, gm.position, Quaternion.identity, transform);
       }
   

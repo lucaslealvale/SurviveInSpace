@@ -201,6 +201,7 @@ MonoBehaviour:
   cantoSuperior: 1.5
   cantoInferior: -7.8
   bullet: {fileID: 955231211535652777, guid: 3dbfd43f2fa6df94e92f831ebb7aba03, type: 3}
+  bullet2: {fileID: 955231211535652777, guid: 62d9fcac754912f4fb0b45253d11fd16, type: 3}
   arma: {fileID: 6625335874742561105}
-  shootDelay: 1
+  shootDelay: 0.5
   shootSFX: {fileID: 8300000, guid: 1d2dbd5aed7463040b8cc11e2f8fc944, type: 3}

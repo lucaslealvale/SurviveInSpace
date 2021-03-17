@@ -12,6 +12,7 @@ public class GameManager
    public int pontos;
    public int time;
    public  Vector3 position;
+   public int nivelArma;
    public static GameManager GetInstance()
    {
        if(_instance == null)
@@ -26,6 +27,8 @@ public class GameManager
        vidas = 10;
        pontos = 0;
        time = 6000;
+       nivelArma = 0;
+
        position = new Vector3(-5.25f,-4.0f,0);
        gameState = GameState.MENU;
    }
@@ -52,6 +55,6 @@ public class GameManager
     vidas = 10;
     pontos = 0;
     time = 6000;
-
+    nivelArma = 0;
     }
 }

@@ -194,6 +194,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   td: {fileID: 11400000, guid: 388701daaa55c334e9f5368eb44c325e, type: 2}
   tiro: {fileID: 955231211535652777, guid: fae4f4bd940bfe14391842b9c1463d78, type: 3}
+  points: {fileID: 7282508523399935928, guid: a70dcd22432fc2646bbb9ba872ccb372, type: 3}
+  superArma: {fileID: 2504833021527657080, guid: e13df537ccdc7664c9faf42215883752,
+    type: 3}
   shootSFX: {fileID: 8300000, guid: 6a0424e72abe2eb4481a39d3c290bfc6, type: 3}
 --- !u!114 &1995608990433530369
 MonoBehaviour:

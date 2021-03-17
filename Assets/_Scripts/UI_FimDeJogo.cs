@@ -11,7 +11,7 @@ public class UI_FimDeJogo : MonoBehaviour
        gm = GameManager.GetInstance();
 
        
-       if(gm.time <= 0 && gm.pontos >= 3){
+       if(gm.time <= 0 && gm.pontos >= 100){
            message.text = $"Missão completa!! \n   Pontuação: {gm.pontos}";
          
        }

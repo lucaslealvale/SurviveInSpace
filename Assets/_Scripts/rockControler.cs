@@ -2,55 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : SteerableBehaviour, IShooter, IDamageable
-{
-    public GameObject tiro;
-    public GameObject points;
 
-    public GameObject superArma;
+public class rockControler : SteerableBehaviour, IDamageable
+{
+   public GameObject points;
+    private int vidas = 3;
     GameManager gm;
-    public AudioClip shootSFX;
-    private int vidas = 2;
+    // public AudioClip shootSFX;
+
     private void Start()
     {
         gm = GameManager.GetInstance();
 
     }
-    public void Shoot()
-    {
-    audioManeger.PlaySFX(shootSFX);
-
-    Instantiate(tiro, transform.position, Quaternion.identity);    }
-
     public void TakeDamage()
     {
        if(gm.nivelArma==0){
        vidas--;
 
        if (vidas <= 0){
-        Die();   
-        };
-        }else{
+            Die();   
+            };
+       
+       }else{
         vidas-=2;
-
        if (vidas <= 0){
-        Die();   
-        };
+            Die();   
+            };
         }
+         
     }
 
     public void Die()
     {
-        float a =  Random.Range(0.0f,5.0f);
-        if( a <= 1.0f){
-            Instantiate(superArma, transform.position, Quaternion.identity);
-            }
         Destroy(gameObject);
-        gm.pontos+=10;
+        gm.pontos+=30;
         Instantiate(points, transform.position, Quaternion.identity);
-        
     }
-
     float angle = 0;
 
     private void FixedUpdate()

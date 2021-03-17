@@ -7,6 +7,8 @@ TagManager:
   - enemy
   - parede
   - enemyShoot
+  - pedra
+  - superArma
   layers:
   - Default
   - TransparentFX
